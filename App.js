@@ -67,8 +67,8 @@ const Category = () => {
         style={category_styles.background}
       />
       <Text style={category_styles.header}>Categories!</Text>
-      <Categories title='Help People' image="https://www.flaticon.com/free-icon/social-care_921356?term=community&related_id=921356"/>
-      <Categories title='Help the Planet' />
+      <Categories title='Help People' image="https://i.ibb.co/K7CtT6F/921356.png"/>
+      <Categories title='Help the Planet' image="https://i.ibb.co/4gFjyhc/2072130.png"/>
     </View>
   )
 }
@@ -97,20 +97,22 @@ const category_styles = StyleSheet.create({
     borderRadius: 30, 
     backgroundColor: 'rgba(217, 217, 217, 0.4)', 
     marginTop: 66, 
-    
+    flexDirection: "row",
   },
   category_title: {
-    fontSize: 25,
+    fontSize: 23,
     paddingTop: 40, 
-    paddingRight: 27, 
+    paddingRight: 0, 
     paddingBottom: 40, 
-    paddingLeft: 100, 
+    paddingLeft: 30, 
     color: '#FAFAFF', 
     fontFamily: 'Mogra',
-    
   }, 
   image: {
-   
+   width: 71,
+   height: 70,
+   marginLeft: 15, 
+   marginTop: 20
   },
   header: {
     fontFamily: 'Mogra', 
