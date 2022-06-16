@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Button, Pressable, OnPress } from 'react-native';
+import { StyleSheet, Text, View, Button, Pressable, OnPress, Image } from 'react-native';
 import { useFonts } from 'expo-font';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -67,18 +67,21 @@ const Category = () => {
         style={category_styles.background}
       />
       <Text style={category_styles.header}>Categories!</Text>
-       <Box/>
-       <Box_two/>
+      <Categories title='Help People' image="https://www.flaticon.com/free-icon/social-care_921356?term=community&related_id=921356"/>
+      <Categories title='Help the Planet' />
     </View>
   )
 }
 
-export const Box = () => (
-  <View style={category_styles.box} />
-);
-
-export const Box_two = () => (
-  <View style={category_styles.box2} />
+const Categories = (props) => (
+  <Pressable>
+  <View style={category_styles.box}>
+    <Image source={{ uri: props.image }} style={category_styles.image}/>
+    <View>
+      <Text style={category_styles.category_title}>{props.title}</Text>
+    </View>
+  </View>
+  </Pressable>
 );
 
 const category_styles = StyleSheet.create({
@@ -88,13 +91,36 @@ const category_styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(252, 1, 197, 0.5)',
   },
+  box: {
+    width: 307,
+    height: 111,
+    borderRadius: 30, 
+    backgroundColor: 'rgba(217, 217, 217, 0.4)', 
+    marginTop: 66, 
+    
+  },
+  category_title: {
+    fontSize: 25,
+    paddingTop: 40, 
+    paddingRight: 27, 
+    paddingBottom: 40, 
+    paddingLeft: 100, 
+    color: '#FAFAFF', 
+    fontFamily: 'Mogra',
+    
+  }, 
+  image: {
+   
+  },
   header: {
     fontFamily: 'Mogra', 
     color: '#FAFAFF',
     fontSize: 50, 
     fontWeight: '400', 
-    marginTop: -200, 
-    marginBottom: 39,
+    paddingTop: -200, 
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start', 
+    paddingBottom: 60
   }, 
   background: {
     position: 'absolute',
@@ -103,19 +129,6 @@ const category_styles = StyleSheet.create({
     top: 0,
     height: 700,
   },
-  box: {
-    width: 307,
-    height: 111,
-    borderRadius: 30, 
-    backgroundColor: 'rgba(217, 217, 217, 0.4)', 
-  },
-  box2: {
-    width: 307,
-    height: 111,
-    borderRadius: 30, 
-    backgroundColor: 'rgba(217, 217, 217, 0.4)', 
-    marginTop: 63, 
-  }
 })
 
 // Final App function to render 
@@ -133,7 +146,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator  headerMode='none'>
+      <Stack.Navigator  screenOptions={{headerShown: false}}>
         <Stack.Screen name='start' component={Start}/>
         <Stack.Screen name='category' component={Category}/>
       </Stack.Navigator>
