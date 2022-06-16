@@ -94,7 +94,7 @@ const category_styles = StyleSheet.create({
     backgroundColor: 'rgba(252, 1, 197, 0.5)',
   },
   box: {
-    width: 307,
+    width: 320,
     height: 111,
     borderRadius: 30, 
     backgroundColor: 'rgba(217, 217, 217, 0.4)', 
@@ -138,6 +138,8 @@ const category_styles = StyleSheet.create({
     height: 700,
   },
 })
+
+// To-do list pages 
 
 // Final App function to render 
 
