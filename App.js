@@ -121,7 +121,7 @@ const category_styles = StyleSheet.create({
     color: '#FAFAFF',
     fontSize: 50, 
     fontWeight: '400', 
-    paddingTop: -300, 
+    paddingTop: 0, 
     alignItems: 'flex-start',
     justifyContent: 'flex-start', 
     paddingBottom: 60,
