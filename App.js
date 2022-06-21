@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { LinearGradient } from 'expo-linear-gradient';
-import PropTypes from 'prop-types';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
 // Get started page 
@@ -76,7 +76,9 @@ const Category = () => {
       <Pressable onPress={() => navi_gation.navigate('People_todo')}>
       <Categories title='Help People' image="https://i.ibb.co/K7CtT6F/921356.png"/>
       </Pressable>
+      <Pressable onPress={() => navi_gation.navigate('Planet_todo')}>
       <Categories title='Help the Planet' image="https://i.ibb.co/4gFjyhc/2072130.png"/>
+      </Pressable>
       </View>
       <View style={category_styles.space}>
       </View>
@@ -157,7 +159,200 @@ function People_todo() {
         style={todo_styles.background}
       />
      <Text style={todo_styles.header}>Help People</Text>
-     
+     <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Compliment a random stranger"
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+        //marginBottom: 400, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+  <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Give chocolate to a random stranger "
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+       // marginBottom: 400, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 18, 
+      fontWeight: '600'
+    }}
+  />
+   <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Catch up with an old friend"
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+       // marginBottom: 300, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+  <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Tell your parents you love them "
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+        marginBottom: 200, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+    </View> 
+    
+  )
+}
+
+function Planet_todo() {
+  return (
+  
+    <View style={todo_styles.layout}>
+      <LinearGradient
+        colors={['rgba(0, 255, 71, 0.62)', 'transparent']}
+        style={todo_styles.background}
+      />
+     <Text style={[todo_styles.header, {fontSize: 40}]}>Help the Planet</Text>
+     <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Pick up a piece of trash "
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+        //marginBottom: 400, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+  <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Walk instead of taking a car"
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+       // marginBottom: 400, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+   <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Donate clothes to a local charity "
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+       // marginBottom: 300, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+  <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Plant a tree in a local park"
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+       // marginBottom: 200, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
+  <BouncyCheckbox
+      size={40}
+      color="#FFFFFF"
+      fillColor="green"
+      // unfillColor="#FFFFFF"
+      text="Finish all of your meals"
+      iconStyle={{ borderColor: "black", borderWidth: 3 }}
+      onPress={(isChecked=Boolean) => {}}
+      style={{
+        marginTop: 30, 
+        marginBottom: 150, 
+        fontWeight: 6, 
+        justifyContent: 'center', 
+        alignItems: 'center'}}
+      textStyle={{
+      color: 'white',
+      fontSize: 20, 
+      fontWeight: '600'
+    }}
+  />
     </View> 
     
   )
@@ -186,7 +381,7 @@ const todo_styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: 5, 
-    paddingBottom: 500
+    paddingBottom: 10
 }, 
 })
 
@@ -209,6 +404,7 @@ export default function App() {
         <Stack.Screen name='start' component={Start}/>
         <Stack.Screen name='category' component={Category}/>
         <Stack.Screen name='People_todo' component={People_todo}/> 
+        <Stack.Screen name='Planet_todo' component={Planet_todo}/>
         </Stack.Navigator>
    </NavigationContainer>
   );
