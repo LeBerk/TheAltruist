@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Button, Pressable, OnPress, Image } from 'react-native';
+import React, {useState, useEffect, Component} from 'react';
+import { StyleSheet, Text, View, Button, Pressable, OnPress, Image, Alert, Platform, TouchableHighlight } from 'react-native';
 import { useFonts } from 'expo-font';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { LinearGradient } from 'expo-linear-gradient';
+import PropTypes from 'prop-types';
+
 
 // Get started page 
 
@@ -60,6 +62,9 @@ const styles = StyleSheet.create({
 // Categories page 
 
 const Category = () => {
+
+  const navi_gation = useNavigation(); 
+
   return (
     <View style={category_styles.layout}>
       <LinearGradient
@@ -68,7 +73,9 @@ const Category = () => {
       />
       <View>
       <Text style={category_styles.header}>Categories!</Text>
+      <Pressable onPress={() => navi_gation.navigate('People_todo')}>
       <Categories title='Help People' image="https://i.ibb.co/K7CtT6F/921356.png"/>
+      </Pressable>
       <Categories title='Help the Planet' image="https://i.ibb.co/4gFjyhc/2072130.png"/>
       </View>
       <View style={category_styles.space}>
@@ -78,12 +85,12 @@ const Category = () => {
 }
 
 const Categories = (props) => (
-  <Pressable>
+
   <View style={category_styles.box}>
     <Image source={{ uri: props.image }} style={category_styles.image}/>
       <Text style={category_styles.category_title}>{props.title}</Text>
   </View>
-  </Pressable>
+ 
 );
 
 const category_styles = StyleSheet.create({
@@ -141,6 +148,48 @@ const category_styles = StyleSheet.create({
 
 // To-do list pages 
 
+function People_todo() {
+  return (
+  
+    <View style={todo_styles.layout}>
+      <LinearGradient
+        colors={['rgba(0, 255, 71, 0.62)', 'transparent']}
+        style={todo_styles.background}
+      />
+     <Text style={todo_styles.header}>Help People</Text>
+     
+    </View> 
+    
+  )
+}
+
+const todo_styles = StyleSheet.create({
+  layout: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(6, 31, 255, 0.62)',
+  },
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 900,
+},
+  header: {
+    fontFamily: 'Mogra', 
+    color: '#FAFAFF',
+    fontSize: 50, 
+    fontWeight: '400', 
+    paddingTop: 0, 
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 5, 
+    paddingBottom: 500
+}, 
+})
+
 // Final App function to render 
 
 export default function App() {
@@ -155,11 +204,12 @@ export default function App() {
   const Stack = createStackNavigator(); 
 
   return (
-    <NavigationContainer>
+   <NavigationContainer>
       <Stack.Navigator  screenOptions={{headerShown: false}}>
         <Stack.Screen name='start' component={Start}/>
         <Stack.Screen name='category' component={Category}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Stack.Screen name='People_todo' component={People_todo}/> 
+        </Stack.Navigator>
+   </NavigationContainer>
   );
 }
